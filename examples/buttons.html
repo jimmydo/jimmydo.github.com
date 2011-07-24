@@ -5,7 +5,8 @@
 <style>
 a,
 button,
-input {
+input[type="button"],
+input[type="submit"] {
     background-color: #ccc;
     line-height: normal; /* since Firefox forces <button> and <input> elements to always have a line height of 'normal', we do the same for all button-like elements for consistency */
     padding: 6px 12px;
@@ -18,7 +19,8 @@ a {
 }
 
 button,
-input {
+input[type="button"],
+input[type="submit"] {
     border: 0; /* remove default button styling */
     cursor: pointer; /* change cursor when hovering over button */
     font-family: inherit; /* use font family of parent element */
@@ -28,15 +30,20 @@ input {
 
 /* remove extra button padding in Firefox */
 button::-moz-focus-inner,
-input::-moz-focus-inner {
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
     border: 0;
     padding: 0;
 }
 </style>
 </head>
 <body>
+<p>
+The following buttons should look identical:
+</p>
 <a href="#">Test Button</a>
 <input type="button" value="Test Button" />
+<input type="submit" value="Test Button" />
 <button>Test Button</button>
 </body>
 </html>

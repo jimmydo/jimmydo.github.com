@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Buttons</title>
+<style>
+a,
+button,
+input {
+    background-color: #ccc;
+    line-height: normal; /* since Firefox forces <button> and <input> elements to always have a line height of 'normal', we do the same for all button-like elements for consistency */
+    padding: 6px 12px;
+}
+
+a {
+    color: inherit; /* inherit text color of parent element instead of using the usual hyperlink color */
+    display: inline-block; /* ensure proper height */
+    text-decoration: none; /* remove underline */
+}
+
+button,
+input {
+    border: 0; /* remove default button styling */
+    cursor: pointer; /* change cursor when hovering over button */
+    font-family: inherit; /* use font family of parent element */
+    font-size: inherit; /* use font size of parent element */
+    margin: 0;
+}
+
+/* remove extra button padding in Firefox */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+</style>
+</head>
+<body>
+<a href="#">Test Button</a>
+<input type="button" value="Test Button" />
+<button>Test Button</button>
+</body>
+</html>
